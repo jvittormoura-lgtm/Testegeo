@@ -18,49 +18,16 @@ map.addControl(new maplibregl.NavigationControl(), 'top-right');
 // 4. Carrega as camadas quando o mapa base estiver pronto
 map.on('load', () => {
     
-    // --- CAMADA 1: CONDOMÍNIOS DISPENSA (Amarelo) ---
-    map.addSource('fonte-dispensa', {
-        type: 'vector',
-        url: `pmtiles://${URL_DISPENSA}`
-    });
-    map.addLayer({
-        id: 'camada-dispensa',
-        source: 'fonte-dispensa',
-        'source-layer': 'Condominios Dispensa', 
-        type: 'fill', 
-        paint: {
-            'fill-color': '#FFD700', 
-            'fill-opacity': 0.6,
-            'fill-outline-color': '#FFFFFF' 
-        }
-    });
-
-    // --- CAMADA 2: CONDOMÍNIOS PROTOCOLOS (Rosa) ---
-    map.addSource('fonte-protocolos', {
-        type: 'vector',
-        url: `pmtiles://${URL_PROTOCOLOS}`
-    });
-    map.addLayer({
-        id: 'camada-protocolos',
-        source: 'fonte-protocolos',
-        'source-layer': 'Condominios Protocolos', 
-        type: 'fill', 
-        paint: {
-            'fill-color': '#FF69B4', 
-            'fill-opacity': 0.6,
-            'fill-outline-color': '#FFFFFF'
-        }
-    });
-
     // --- CAMADA 3: LOTEAMENTOS E CONJ. HABITACIONAIS (Vermelho) ---
     map.addSource('fonte-lot-cj', {
         type: 'vector',
         url: `pmtiles://${URL_LOT_CJ}`
     });
+    
     map.addLayer({
         id: 'camada-lot-cj',
         source: 'fonte-lot-cj',
-        'source-layer': 'Lot e Cj Hab', 
+        'source-layer': 'lot_cj_hab', // <-- NOME CORRIGIDO AQUI!
         type: 'fill', 
         paint: {
             'fill-color': '#FF0000', 
@@ -68,4 +35,5 @@ map.on('load', () => {
             'fill-outline-color': '#FFFFFF'
         }
     });
+    
 });
