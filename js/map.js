@@ -3,9 +3,9 @@ const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
 // 2. Caminhos para os 3 arquivos na pasta 'data'
-const URL_DISPENSA = "./data/Condominios Dispensa.pmtiles"; 
-const URL_PROTOCOLOS = "./data/Condominios Protocolos.pmtiles"; 
-const URL_LOT_CJ = "./data/Lot e Cj Hab.pmtiles"; 
+const URL_DISPENSA = "./data/condominios_dispensa.pmtiles"; 
+const URL_PROTOCOLOS = "./data/condominios_protocolos.pmtiles"; 
+const URL_LOT_CJ = "./data/lot_cj_hab.pmtiles";
 
 // 3. Inicializa o mapa
 const map = new maplibregl.Map({
